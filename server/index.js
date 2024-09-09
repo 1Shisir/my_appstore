@@ -1,8 +1,8 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const sequelize = require('./config/database');
-const appRoutes = require('./routes/appRoutes');
+import express from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import sequelize from './config/database.js';
+import appRoutes from './routes/appRoutes.js';
 
 const app = express();
 

@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/database.js';
 
 // Define the App model
 const App = sequelize.define('App', {
@@ -25,4 +25,4 @@ const App = sequelize.define('App', {
   timestamps: true,
 });
 
-module.exports = App;
+export default App;
