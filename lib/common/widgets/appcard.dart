@@ -3,7 +3,13 @@ import 'package:get/get.dart';
 import 'package:my_appstore/views/app_detail_screen.dart';
 
 class AppCard extends StatelessWidget {
-  const AppCard({super.key});
+  const AppCard(
+      {super.key,
+      required this.appName,
+      required this.category,
+      required this.description});
+
+  final String appName, category, description;
 
   @override
   Widget build(BuildContext context) {
@@ -14,22 +20,20 @@ class AppCard extends StatelessWidget {
       child: Card(
         child: Column(
           children: [
-            Expanded(
-              child: Image.network(
-                'https://via.placeholder.com/150', // Replace with app icon
-                fit: BoxFit.cover,
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Text(
-                'App Name', // Replace with app name
-                style: TextStyle(fontWeight: FontWeight.bold),
+                appName, // Replace with app name
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8.0),
-              child: Text('Category Name'), // Replace with category
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Text(category), // Replace with category
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Text(description), // Replace with category
             ),
           ],
         ),
